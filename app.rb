@@ -1,5 +1,7 @@
-require 'sinatra'
+require 'sinatra/base'
 require 'Date'
+
+class Birthday_app < Sinatra::Base
 
 get '/' do
   erb(:index)
@@ -39,4 +41,8 @@ end
 get '/birthday' do
   "This will be the landing page if your birthday is today"
   erb :birthday
+end
+
+# start the server if ruby file executed directly
+run! if app_file == $0
 end
